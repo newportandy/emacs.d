@@ -135,8 +135,9 @@
 (define-key minibuffer-local-must-match-map [escape] 'minibuffer-keyboard-quit)
 (define-key minibuffer-local-isearch-map [escape] 'minibuffer-keyboard-quit)
 
-;;Shift space breaks out of insert
+;;Shift space breaks out of insert/visual mode
 (define-key evil-insert-state-map (kbd "S-SPC") `evil-normal-state)
+(define-key evil-visual-state-map (kbd "S-SPC") `evil-normal-state)
 ;; Meta-v in insert mode pastes like you'd expect
 (define-key evil-insert-state-map (kbd "M-v") `yank)
 
