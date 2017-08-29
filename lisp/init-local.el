@@ -6,7 +6,7 @@
 (setq auto-save-file-name-transforms
       `((".*" ,temporary-file-directory t)))
 
-;;; Setup line numbers for code
+;;; Setup line numbers for code - just enables linum for any prog-mode modes
 ;;; code and modes-to-hook-with-linum pilfered from https://gist.github.com/dbrady/3988571
 (require 'linum)
 
@@ -15,27 +15,7 @@
 (defun hook-linum-mode (mode)
   (add-hook mode 'enable-linum-mode))
 
-(setq modes-to-hook-with-linum '(c-mode-hook
-                                 csv-mode-hook
-                                 emacs-lisp-mode-hook
-                                 coffee-mode-hook
-                                 feature-mode-hook
-                                 java-mode-hook
-                                 js-mode-hook
-                                 javascript-mode-hook
-                                 espresso-mode-hook
-                                 haml-mode-hook
-                                 lisp-mode-hook
-                                 nxml-mode-hook
-                                 php-mode-hook
-                                 ruby-mode-hook
-                                 sass-mode-hook
-                                 scss-mode-hook
-                                 sh-mode-hook
-                                 text-mode-hook
-                                 textile-mode-hook
-                                 xml-mode-hook
-                                 yaml-mode-hook))
+(setq modes-to-hook-with-linum '(prog-mode-hook))
 
 (mapc 'hook-linum-mode modes-to-hook-with-linum)
 
