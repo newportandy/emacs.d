@@ -101,6 +101,13 @@
   "g" 'magit-status
   )
 
+;; Window navigation shouldn't be a horrifying abnormal experience
+(define-key evil-normal-state-map (kbd "C-h") 'evil-window-left)
+(define-key evil-normal-state-map (kbd "C-j") 'evil-window-down)
+(define-key evil-normal-state-map (kbd "C-k") 'evil-window-up)
+(define-key evil-normal-state-map (kbd "C-l") 'evil-window-right)
+
+
 ;; Treat wrapped line scrolling as single lines
 (define-key evil-normal-state-map (kbd "j") 'evil-next-visual-line)
 (define-key evil-normal-state-map (kbd "k") 'evil-previous-visual-line)
@@ -123,6 +130,9 @@
 ;; Meta-v in insert mode pastes like you'd expect
 (define-key evil-insert-state-map (kbd "M-v") `yank)
 
+;; evil-surround is mandatory
+(require-package 'evil-surround)
+(global-evil-surround-mode 1)
 
 ;;; Org mode setup
 (setq
