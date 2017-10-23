@@ -26,7 +26,9 @@
 
 
 ;;; Pick a colour scheme
-(color-theme-sanityinc-tomorrow-eighties)
+                                        ;(color-theme-sanityinc-tomorrow-eighties)
+(require-package 'atom-one-dark-theme)
+(load-theme 'atom-one-dark t)
 
 ;;; Use ag for searching all the things
 (require-package 'ag)
