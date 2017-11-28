@@ -46,6 +46,7 @@
 (setq evil-insert-state-cursor '("red" bar))
 (setq evil-replace-state-cursor '("red" bar))
 (setq evil-operator-state-cursor '("red" hollow))
+(setq evil-shift-width 2)
 
 ;; User leader
 (require-package 'evil-leader)
